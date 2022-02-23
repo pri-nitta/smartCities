@@ -12,14 +12,13 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>6.0.0.Alpha9</version>
 		</dependency>
-<!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc8 -->
-<dependency>
-    <groupId>oracle</groupId>
-    <artifactId>jdbc-driver</artifactId>
-    <version>12.2.0.1</version>
-    <scope>system</scope>
-    <systemPath>C:\Users\vntprni\Downloads\ojdbc8-12.2.0.1.jar</systemPath>
-</dependency>
-
+		<!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc8 -->
+		<dependency>
+			<groupId>oracle</groupId>
+			<artifactId>jdbc-driver</artifactId>
+			<version>12.2.0.1</version>
+			<scope>system</scope>
+			<systemPath>C:\Users\vntprni\Downloads\ojdbc8-12.2.0.1.jar</systemPath>
+		</dependency>
 	</dependencies>
 </project>
