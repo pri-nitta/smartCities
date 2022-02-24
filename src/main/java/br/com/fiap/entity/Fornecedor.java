@@ -76,6 +76,4 @@ public class Fornecedor {
 	public void setDataModificacao(Calendar dataModificacao) {
 		this.dataModificacao = dataModificacao;
 	}
-	
-	
 }

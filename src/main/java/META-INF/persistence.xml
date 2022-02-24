@@ -9,16 +9,16 @@
 		<class>br.com.fiap.entity.Fornecedor</class>
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.Oracle12cDialect" />
 			<property name="javax.persistence.jdbc.driver"
 				value="orcale.jdbc.OracleDriver" />
 			<property name="javax.persistence.jdbc.user"
-				value="DESAFIO02" />
+				value="RM87840" />
 			<property name="javax.persistence.jdbc.password"
-				value="DESAFIO02" />
+				value="130990" />
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:oracle:thin@oracle.fiap.com.br:1521:orcl" />
 		</properties>
