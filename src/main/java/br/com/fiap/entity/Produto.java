@@ -13,6 +13,10 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Formula;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
 @Table(name="tb_produto")
 public class Produto {
@@ -35,5 +39,18 @@ public class Produto {
 	
 	@Enumerated(EnumType.STRING)
 	private Estado estado;
+	
+	// pega o sysdate e joga automaticamente, serve apenas para o Hibernate
+	@CreationTimestamp
+	@Column(name="dt_cadastro")
+	private Calendar dataCadastro;
+	
+	@Column(name="dt_atualizacao")
+	@UpdateTimestamp
+	private Calendar dataModidicacao;
+	
+	@Formula("vl_preco*0.9")
+	private double precoDesconto;
+	
 	
 }
