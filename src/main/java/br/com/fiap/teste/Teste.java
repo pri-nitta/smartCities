@@ -9,7 +9,6 @@ public class Teste {
 		//gerencia as entidades do projeto, pede o nome pois pode ter mais de uma persistencia.
 		Persistence.createEntityManagerFactory("smartcities").createEntityManager();
 		
-		
 	}
 
 }
