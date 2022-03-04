@@ -10,6 +10,7 @@
 		<class>br.com.fiap.entity.Pedido</class>
 		<class>br.com.fiap.entity.Estabelecimento</class>
 		<class>br.com.fiap.entity.ContratoAluguel</class>
+				<class>br.com.fiap.entity.TipoEstabelecimento</class>
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
 

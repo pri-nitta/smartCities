@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -20,6 +23,23 @@ public class Estabelecimento {
 	
 	@Column(name="nm_estabelecimento", nullable=false, length=100)
 	private String nome;
+	
+	//Evita a criação de 2 FK
+	@OneToOne(mappedBy="estabelecimento")
+	private ContratoAluguel contratoAluguel;
+	
+	@ManyToOne
+	@JoinColumn(name= "id_tipo_estabelecimento")
+	private TipoEstabelecimento tipo;
+	
+
+	public ContratoAluguel getContratoAluguel() {
+		return contratoAluguel;
+	}
+
+	public void setContratoAluguel(ContratoAluguel contratoAluguel) {
+		this.contratoAluguel = contratoAluguel;
+	}
 
 	public int getId() {
 		return id;
@@ -45,5 +65,13 @@ public class Estabelecimento {
 
 	public Estabelecimento() {
 		super();
+	}
+
+	public TipoEstabelecimento getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoEstabelecimento tipo) {
+		this.tipo = tipo;
 	}
 }
