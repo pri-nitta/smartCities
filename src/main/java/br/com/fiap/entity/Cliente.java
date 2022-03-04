@@ -1,6 +1,7 @@
 package br.com.fiap.entity;
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -22,6 +24,9 @@ public class Cliente {
 	@SequenceGenerator(name="cliente", sequenceName="sq_tb_cliente", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="cliente")
 	private int id;
+	
+	@ManyToMany (mappedBy ="clientes")
+	private List<Estabelecimento> estabelecimentos;
 	
 	@Column(name="nm_cliente", nullable=false, length=60)
 	private String nome;
@@ -183,5 +188,13 @@ public class Cliente {
 	}
 
 	public Cliente() {
+	}
+
+	public List<Estabelecimento> getEstabelecimentos() {
+		return estabelecimentos;
+	}
+
+	public void setEstabelecimentos(List<Estabelecimento> estabelecimentos) {
+		this.estabelecimentos = estabelecimentos;
 	}
 }

@@ -1,11 +1,15 @@
 package br.com.fiap.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
@@ -23,6 +27,10 @@ public class Estabelecimento {
 	
 	@Column(name="nm_estabelecimento", nullable=false, length=100)
 	private String nome;
+	
+	@ManyToMany
+	@JoinTable(joinColumns=@JoinColumn(name="id_estabelecimento"), inverseJoinColumns=@JoinColumn(name="id_cliente"), name="tb_cliente_estabelecimento")
+	private List<Cliente> clientes;
 	
 	//Evita a criação de 2 FK
 	@OneToOne(mappedBy="estabelecimento")
