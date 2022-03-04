@@ -5,14 +5,15 @@ import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="tb_contrato")
-public class Contrato {
+@Table(name="tb_contrato_aluguel")
+public class ContratoAluguel {
 
 	@Id
 	@Column(name="id_contrato")
@@ -26,6 +27,7 @@ public class Contrato {
 	private Calendar dataVencimento;
 	
 	@OneToOne
+	@JoinColumn(name="id_estabelecimento")
 	private Estabelecimento estabelecimento;
 
 	public int getId() {
