@@ -8,6 +8,8 @@
 		<class>br.com.fiap.entity.Fornecedor</class>
 		<class>br.com.fiap.entity.Cliente</class>
 		<class>br.com.fiap.entity.Pedido</class>
+		<class>br.com.fiap.entity.Estabelecimento</class>
+		<class>br.com.fiap.entity.Contrato</class>
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
 
