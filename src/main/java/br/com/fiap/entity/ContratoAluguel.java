@@ -62,11 +62,16 @@ public class ContratoAluguel {
 		this.dataVencimento = dataVencimento;
 	}
 
-	public Contrato(int id, double aluguel, Calendar dataVencimento) {
+	public ContratoAluguel(int id, double aluguel, Calendar dataVencimento, Estabelecimento estabelecimento) {
 		super();
 		this.id = id;
 		this.aluguel = aluguel;
 		this.dataVencimento = dataVencimento;
+		this.estabelecimento = estabelecimento;
+	}
+
+	public ContratoAluguel() {
+		super();
 	}
 	
 	

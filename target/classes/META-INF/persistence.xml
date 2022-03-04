@@ -8,6 +8,11 @@
 		<class>br.com.fiap.entity.Fornecedor</class>
 		<class>br.com.fiap.entity.Cliente</class>
 		<class>br.com.fiap.entity.Pedido</class>
+		<class>br.com.fiap.entity.Estabelecimento</class>
+		<class>br.com.fiap.entity.ContratoAluguel</class>
+		<class>br.com.fiap.entity.TipoEstabelecimento</class>
+		<class>br.com.fiap.entity.Usuario</class>
+		<class>br.com.fiap.entity.Avaliacao</class>
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
 
@@ -26,7 +31,8 @@
 
 			<property name="javax.persistence.jdbc.user" value="RM87840" />
 
-			<property name="javax.persistence.jdbc.password" value="130990" />
+			<property name="javax.persistence.jdbc.password"
+				value="130990" />
 
 		</properties>
 	</persistence-unit>

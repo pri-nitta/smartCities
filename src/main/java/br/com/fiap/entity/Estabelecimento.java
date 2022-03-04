@@ -2,6 +2,7 @@ package br.com.fiap.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,15 +29,15 @@ public class Estabelecimento {
 	@Column(name="nm_estabelecimento", nullable=false, length=100)
 	private String nome;
 	
-	@ManyToMany
+	@ManyToMany(cascade=CascadeType.PERSIST)
 	@JoinTable(joinColumns=@JoinColumn(name="id_estabelecimento"), inverseJoinColumns=@JoinColumn(name="id_cliente"), name="tb_cliente_estabelecimento")
 	private List<Cliente> clientes;
 	
 	//Evita a criação de 2 FK
-	@OneToOne(mappedBy="estabelecimento")
+	@OneToOne(mappedBy="estabelecimento", cascade=CascadeType.PERSIST)
 	private ContratoAluguel contratoAluguel;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name= "id_tipo_estabelecimento")
 	private TipoEstabelecimento tipo;
 	
@@ -80,6 +81,16 @@ public class Estabelecimento {
 	}
 
 	public void setTipo(TipoEstabelecimento tipo) {
+		this.tipo = tipo;
+	}
+
+	public Estabelecimento(int id, String nome, List<Cliente> clientes, ContratoAluguel contratoAluguel,
+			TipoEstabelecimento tipo) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.clientes = clientes;
+		this.contratoAluguel = contratoAluguel;
 		this.tipo = tipo;
 	}
 }
